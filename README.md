@@ -1,2 +1,2 @@
-# noteApp- fullstack
- using react, express and nodejs to create custom REST APIs
+# RestAPI
+ simple API demonstration of routes and data fetching
