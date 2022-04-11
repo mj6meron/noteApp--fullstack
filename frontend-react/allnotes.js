@@ -1,10 +1,13 @@
 const createnew = document.getElementById('createnew')
 const viewall =  (allnotes) => {
-    noteBox = document.createElement('div')
-    document.getElementById('mybox').appendChild(noteBox);
     allnotes.forEach((item)=> {
+        noteBox = document.createElement('div')
+        noteBox.setAttribute("id", "noteBoxxx")
+        document.getElementById('mybox').appendChild(noteBox);
         let note = document.createElement('p');
         let date = document.createElement('p');
+        note.setAttribute("id", "notevalue")
+        date.setAttribute("id", "datevalue")
         noteBox.appendChild(note);
         noteBox.appendChild(date)
         note.innerHTML = item.note;
@@ -12,11 +15,12 @@ const viewall =  (allnotes) => {
     });
 }
 
+
 fetch('/getUsers', {
     method: 'GET'
 })
 .then(result => result.json())
 .then(data => {
-    console.log(data)
+    viewall(data.users)
     }
 ).catch((error=>{console.log('We got an Error fetching')}))

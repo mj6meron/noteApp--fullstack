@@ -1,9 +1,45 @@
 body {
   margin: auto;
   text-align: center;
+  font-family: arial;
+  color: black;
+  font-weight: bold;
 }
 .onetime {
-  border: 1px solid black;
+  border: 2px solid black;
   width: 100%;
   padding: 2%;
+  border-radius: 10px;
+  width: 90%;
+  margin: auto;
+  box-shadow: 0 0 2px 5px rgba(0,0,0,0.3);
+}
+#notevalue{
+  color: white;
+}
+#noteBoxxx{
+  border: solid 1px green;
+  padding: 1%;
+  margin: 1%;
+  border-radius: 10px ;
+  background-color: green;
+  color: white;
+}
+
+a{
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  padding: 2px;
+}
+button{
+  background-color: indigo;
+  padding: 1%;
+  border-radius: 10px;
+  margin: 5% auto ;
+  color: white;
+  font-weight: bold ;
+}
+#headeValue, .welcome{
+  color: #1c1c1c;
 }

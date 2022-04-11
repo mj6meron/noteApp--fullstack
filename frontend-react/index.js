@@ -14,16 +14,23 @@ const noteInput = document.getElementById('noteInput')
 const dateInput = document.getElementById('dateInput')
 
 // on SUBMIT function
+let addedheader = false    // we use this to tell if we added a new user
 createBox.addEventListener('submit', addFunction)
 function addFunction (e) {
-    console.log('we clicked on add lil bitch!')
     e.preventDefault();
     const newNoteValues = {
         "note": noteInput.value,
         "date": dateInput.value
     }
+    // Here we display the added user
+    if (!addedheader){
+        let header = document.createElement('p')
+        document.getElementById('newnoteBox').appendChild(header);
+        header.setAttribute("id", "headerValue")
+        header.innerHTML = "New Note added! Here is the details: "
+    }
+    addedheader=true
     viewAdded(newNoteValues)
-    console.log('here is our details-->  ',  newNoteValues)
     // then we POST request!
     fetch('/CreateNote', {
         method: 'POST',
@@ -37,15 +44,14 @@ function addFunction (e) {
 
 const viewAdded =  (item) => {
     noteBox = document.createElement('div')
+    noteBox.setAttribute("id", "noteBoxxx")
     document.getElementById('newnoteBox').appendChild(noteBox);
-    document.getElementById("newnoteBox").classList.add('onetime');
-    let header = document.createElement('p')
     let note = document.createElement('p');
     let date = document.createElement('p');
-    noteBox.appendChild(header)
+    note.setAttribute("id", "notevalue")
+    date.setAttribute("id", "datevalue")
     noteBox.appendChild(note);
     noteBox.appendChild(date)
-    header.innerHTML = "New Note added! Here is the details: "
     note.innerHTML = "Note: " + item.note;
     date.innerHTML = "Date: " + item.date
 }
