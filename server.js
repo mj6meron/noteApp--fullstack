@@ -35,4 +35,4 @@ app.get('/getUsers', (req, res) => {
 })
 
 
-app.listen(port, ()=> console.log(`Listning on port port - ${port}`));
+app.listen(PORT, ()=> console.log(`Listning on port port - ${PORT}`));
