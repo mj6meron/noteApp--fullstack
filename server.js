@@ -3,7 +3,7 @@ const bodyParser = require('body-parser')
 const express = require('express')
 const app = express()
 const fs = require('fs');
-const port = process.env.PORT || 1337; 
+const PORT = process.env.PORT || 1337; 
 
 //  -------  get the usersData
 let rawdata = fs.readFileSync('./users.json');
