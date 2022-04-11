@@ -1,0 +1,9 @@
+body {
+  margin: auto;
+  text-align: center;
+}
+.onetime {
+  border: 1px solid black;
+  width: 100%;
+  padding: 2%;
+}

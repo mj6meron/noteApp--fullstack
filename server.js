@@ -12,7 +12,7 @@ let usersData = JSON.parse(rawdata);
 //Here we are configuring express to use body-parser as middle-ware.
 app.use(bodyParser.urlencoded({ extended: false })) 
 app.use(bodyParser.json());
-app.use(express.static('frontend'))
+app.use(express.static('frontend-react'))
 
 // Post request to create a new user
 app.post('/CreateNote', (req, res) => {
